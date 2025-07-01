@@ -1,0 +1,4 @@
+div[data-content-type="verse"] > div > p > sup {
+  font-weight: 300;
+  margin-right: 5px;
+}

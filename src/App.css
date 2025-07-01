@@ -1,116 +1,191 @@
-.logo.vite:hover {
-  filter: drop-shadow(0 0 2em #747bff);
-}
-
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafb);
-}
-:root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-
-  color: #0f0f0f;
-  background-color: #f6f6f6;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-.container {
+*,
+::after,
+::before {
+  box-sizing: border-box;
   margin: 0;
-  padding-top: 10vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
+  padding: 0;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: 0.75s;
+html {
+  /* color: #21222b;
+  background-color: #c5cdd5; */
+  color: #c5cdd5;
+  background-color: #1b1d22;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "Raleway", sans-serif;
+  font-family: "Figtree", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
+  /* font-family: "Questrial", sans-serif; */
 }
 
-.logo.tauri:hover {
-  filter: drop-shadow(0 0 2em #24c8db);
-}
-
-.row {
-  display: flex;
-  justify-content: center;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-
-a:hover {
-  color: #535bf2;
+h1,
+h2,
+h3 {
+  /* TODO */
+  line-height: 1.2;
+  margin-top: 24px;
 }
 
 h1 {
-  text-align: center;
+  font-size: 48px;
+  margin-bottom: 3px;
 }
 
-input,
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  color: #0f0f0f;
-  background-color: #ffffff;
-  transition: border-color 0.25s;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+h2 {
+  font-size: 36px;
+  margin-bottom: 5px;
 }
 
-button {
-  cursor: pointer;
+h3 {
+  font-size: 24px;
+  margin-bottom: 7px;
 }
 
-button:hover {
-  border-color: #396cd8;
-}
-button:active {
-  border-color: #396cd8;
-  background-color: #e8e8e8;
-}
-
-input,
-button {
-  outline: none;
+p,
+blockquote {
+  /* TODO */
+  font-size: 18px;
+  position: relative;
+  /* TODO */
+  line-height: 1.8;
+  letter-spacing: normal;
+  word-spacing: normal;
 }
 
-#greet-input {
-  margin-right: 5px;
+p::before {
+  position: relative;
+  font-size: 12px;
+  /* TODO */
+  margin-right: 11px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    color: #f6f6f6;
-    background-color: #2f2f2f;
-  }
-
-  a:hover {
-    color: #24c8db;
-  }
-
-  input,
-  button {
-    color: #ffffff;
-    background-color: #0f0f0f98;
-  }
-  button:active {
-    background-color: #0f0f0f69;
-  }
+.app {
+  display: flex;
+  justify-content: center;
 }
+
+.app-container {
+  width: 650px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+div[data-node-type="block"] {
+}
+
+div[data-node-type="content"] > *:first-child {
+  /* FIX: may have issues */
+  margin-right: 10px;
+}
+
+/*
+===================
+  BULLET LIST
+===================
+*/
+
+div[data-content-type="bulletList"] > p::before {
+  /* TODO */
+  margin-left: 12px;
+  top: -2px;
+}
+
+div[data-indent-level="0"] > div[data-content-type="bulletList"] > p::before {
+  content: "●";
+}
+
+div[data-indent-level="1"] > div[data-content-type="bulletList"] > p::before {
+  content: "○";
+}
+
+div[data-indent-level="2"] > div[data-content-type="bulletList"] > p::before {
+  content: "■";
+}
+
+/*
+===================
+  BULLET LIST
+===================
+*/
+
+/*
+===================
+  NUMBERED LIST
+===================
+*/
+
+div[data-content-type="numberedList"] > p::before {
+  content: attr(data-start-number) ".";
+  /* TODO */
+  font-size: 18px;
+  /* TODO */
+  margin-left: 12px;
+}
+
+/*
+===================
+  NUMBERED LIST
+===================
+*/
+
+/*
+===================
+  CHECKLIST
+===================
+*/
+
+div[data-node-type="content"] > p {
+  display: inline;
+  vertical-align: baseline;
+}
+
+/*
+===================
+  CHECKLIST
+===================
+*/
+
+/*
+===================
+  INDENT
+===================
+*/
+
+div[data-indent-level="0"] {
+  margin-left: 0px;
+}
+
+div[data-indent-level="1"] {
+  margin-left: 20px;
+}
+
+div[data-indent-level="2"] {
+  margin-left: 40px;
+}
+
+div[data-indent-level="3"] {
+  margin-left: 60px;
+}
+
+div[data-indent-level="4"] {
+  margin-left: 80px;
+}
+
+div[data-indent-level="5"] {
+  margin-left: 100px;
+}
+
+div[data-indent-level="6"] {
+  margin-left: 120px;
+}
+
+div[data-indent-level="7"] {
+  margin-left: 140px;
+}
+
+/*
+===================
+  INDENT
+===================
+*/
