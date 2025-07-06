@@ -21,20 +21,6 @@ div[data-content-type="blockquote"] {
   height: auto;
 }
 
-/* div[data-node-type="content"] > blockquote::before,
-div[data-node-type="content"] > blockquote::after {
-  content: "";
-  position: relative;
-  display: inline-block;
-  background-color: #fff;
-  width: 12px;
-  height: 12px;
-  width: 24px;
-  height: 24px;
-  mask-size: cover;
-  -webkit-mask-size: cover;
-} */
-
 div[data-node-type="content"] > blockquote::before {
   content: "";
   position: relative;
@@ -54,13 +40,6 @@ div[data-node-type="content"] > blockquote::before {
   mask: url("../../assets/icons/quoteStart.svg") center no-repeat;
   -webkit-mask: url("../../assets/icons/quoteStart.svg") center no-repeat;
 }
-
-/* div[data-node-type="content"] > blockquote::after {
-  top: 8px;
-  margin-left: 12px;
-  mask: url("../../assets/icons/quoteEnd.svg") center no-repeat;
-  -webkit-mask: url("../../assets/icons/quoteEnd.svg") center no-repeat;
-} */
 
 div[data-content-type="blockquote"] > div[data-node-type="content"] > p {
   font-size: 16px;

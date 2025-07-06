@@ -1,0 +1,14 @@
+.my_e-container {
+  width: 700px;
+  margin: 100px auto auto auto;
+}
+
+.my_e {
+  /* background-color: #1d1f25; */
+  min-height: 500px;
+}
+
+.my_e:focus {
+  /* outline: auto; */
+  outline: none;
+}
